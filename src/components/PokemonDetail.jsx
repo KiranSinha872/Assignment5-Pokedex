@@ -4,9 +4,9 @@ import { Link, useParams } from "react-router";
 
 function PokemonDetail(){
   const { name } = useParams()
-  const [pokemon, setPokemon] = useState(null);
-  const [loading,setLoading] = useState(true)
-  const [error, setError] = useState("");
+  const [pokemon, setPokemon] =useState(null);
+  const [loading,setLoading]= useState(true)
+  const [error, setError] =useState("");
 
   useEffect(() => {
     async function getPokemon(){
@@ -34,7 +34,7 @@ function PokemonDetail(){
 
   if(error) {
     return (
-      <div style={{textAlign: "center", marginTop:"20px"}}>
+      <div  style={{textAlign:"center",marginTop:"20px"}} >
         <p>{error}</p>
           <Link to="/pokemon">Back</Link>
       </div>
@@ -45,12 +45,14 @@ function PokemonDetail(){
     <div style={{ textAlign:"center", margin: "20px auto", maxWidth:"400px", border: "1px solid red", borderRadius:"10px", padding: "50px" }}>
       <Link to="/pokemon">Back</Link>
 
-      <h1>{pokemon.name}</h1>
+      <h1> {pokemon.name}</h1>
       <img src={pokemon.sprites.other["official-artwork"].front_default} alt={pokemon.name} style={{width:"100%"}}/>
 
       {pokemon.types.map((item)=>(
-        <p key={item.type.name}>{item.type.name}</p>
+        <p key={item.type.name}>{item.type.name }</p>
       ))}
+
+
 
 
       <p>Height: {pokemon.height}</p>

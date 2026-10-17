@@ -25,16 +25,17 @@ function PokemonList(){
   },[])
 
   if(loading){
-    return <p>Loading...</p>
+    return <p>Loading....</p>
   }
 
   if (error) {
-      return <p>{error}</p>;
+      return <p>{error} </p>;
   }
 
 
   return (
     <div style={{ textAlign:"center", padding: "20px" }}>
+
       <h1>Pokemon</h1>
       <Link to="/">HOME</Link>
 
@@ -43,14 +44,17 @@ function PokemonList(){
           onChange={(e)=>{
             setSearch(e.target.value)
           }}
+
           style={{padding:"8px", margin: "15px 0", border:"1px solid red", borderRadius: "5px" }}/>
       </div>
 
       <div style={{display:"flex", flexWrap: "wrap", justifyContent:"center", gap:"105px"}}>
+
         {pokemons.filter((pokemon)=>pokemon.name.includes(search.toLowerCase()))
           .map((pokemon) => (
             <PokemonCard key={pokemon.name} pokemon={pokemon}/>
         ))}
+        
       </div>
     </div>
   )

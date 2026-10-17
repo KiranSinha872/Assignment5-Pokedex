@@ -8,6 +8,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home/>}/>
+      
       <Route path="/pokemon" element={<PokemonList/>}/>
       <Route path="/pokemon/:name" element={<PokemonDetail />}/>
       <Route path="*" element={<NotFound/>}/>
